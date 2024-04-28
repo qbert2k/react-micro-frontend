@@ -13,7 +13,7 @@ const RemoteOrderApp = React.lazy(() => import("order/OrderApp"));
 const RemoteDeliveryApp = React.lazy(() => import("delivery/DeliveryApp"));
 
 const App = () => {
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     return <div>
         <Header/>
         <Suspense fallback={<Loader/>}>
