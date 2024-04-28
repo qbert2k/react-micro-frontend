@@ -12,3 +12,13 @@ React Micro Frontend using Wepback 5
 ![checkout](https://github.com/kunalznk/react-micro-frontend/assets/50258809/f3ba61f3-d215-4793-88b4-a6951dff5f98)
 ![orders](https://github.com/kunalznk/react-micro-frontend/assets/50258809/db896115-f719-4e69-8d1c-dc3e1808e887)
 ![delivery](https://github.com/kunalznk/react-micro-frontend/assets/50258809/279ea315-19f0-431d-bbb4-980e3c3e0068)
+
+
+## Install FontAwesome
+
+```shell
+npm install @fortawesome/fontawesome-svg-core
+npm install @fortawesome/free-solid-svg-icons
+npm install @fortawesome/react-fontawesome
+npm install @fortawesome/free-brands-svg-icons
+```

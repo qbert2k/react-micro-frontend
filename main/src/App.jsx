@@ -1,5 +1,5 @@
-import React, { Suspense, useState } from "react";
-import {  Route, Routes } from "react-router-dom";
+import React, {Suspense, useState} from "react";
+import {Route, Routes} from "react-router-dom";
 
 import "./index.scss";
 
@@ -13,19 +13,19 @@ const RemoteOrderApp = React.lazy(() => import("order/OrderApp"));
 const RemoteDeliveryApp = React.lazy(() => import("delivery/DeliveryApp"));
 
 const App = () => {
-  const [ loading, setLoading ] = useState(false);
-  return <div>
-  <Header />
-  <Suspense fallback={<Loader />}>
-      <Routes>
-        <Route path="/" element={<Home loading={loading} setLoading={setLoading}/>}/>
-        <Route  path="/products/*" element={<RemoteProductApp />}/>
-        <Route  path="/orders/*" element={<RemoteOrderApp />}/>
-        <Route  path="/delivery/*" element={<RemoteDeliveryApp />}/>
-        <Route path="*" element={<NotFound />}/>
- </Routes>
- </Suspense>
- </div>
+    const [loading, setLoading] = useState(false);
+    return <div>
+        <Header/>
+        <Suspense fallback={<Loader/>}>
+            <Routes>
+                <Route path="/" element={<Home loading={loading} setLoading={setLoading}/>}/>
+                <Route path="/products/*" element={<RemoteProductApp/>}/>
+                <Route path="/orders/*" element={<RemoteOrderApp/>}/>
+                <Route path="/delivery/*" element={<RemoteDeliveryApp/>}/>
+                <Route path="*" element={<NotFound/>}/>
+            </Routes>
+        </Suspense>
+    </div>
 };
 
 export default App

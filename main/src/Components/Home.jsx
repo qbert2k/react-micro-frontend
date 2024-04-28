@@ -2,31 +2,33 @@ import axios from 'axios';
 import {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 import Loader from './Loader';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faArrowRight} from '@fortawesome/free-solid-svg-icons';
 
 export default ({loading, setLoading}) => {
 
     const [products, setProducts] = useState([]);
     useEffect(() => {
         if (!products.length) {
-            fetechProducts()
+            fetchProducts();
         }
     }, [products])
 
-    async function fetechProducts() {
-        setLoading(true)
+    async function fetchProducts() {
+        setLoading(true);
         const {data} = await axios.get("https://fakestoreapi.com/products?limit=3")
         setProducts(data);
-        setLoading(false)
+        setLoading(false);
     }
-
 
     return loading ? <Loader/> :
         <div className="mx-auto container flex justify-center items-center py-12 px-4 sm:px-6 2xl:px-0">
             <div className="flex flex-col lg:flex-row justify-center items-center space-y-6 lg:space-y-0">
                 <div className="w-80 sm:w-auto flex flex-col justify-start items-start">
                     <div>
-                        <p className="text-3xl xl:text-4xl font-semibold leading-9 text-gray-800 dark:text-white">International
-                            Ecommerce, We Are Here</p>
+                        <p className="text-3xl xl:text-4xl font-semibold leading-9 text-gray-800 dark:text-white">
+                            International Ecommerce, We Are Here
+                        </p>
                     </div>
                     <div className="mt-4 lg:w-4/5 xl:w-3/5">
                         <p className="text-base leading-6 text-gray-600 dark:text-white">
@@ -37,19 +39,12 @@ export default ({loading, setLoading}) => {
                         <Link to="/products">
                             <button
                                 className="px-4 bg-green-400 rounded-md dark:bg-white dark:text-gray-900 dark:hover:scale-105  flex justify-between items-center w-full lg:w-72 h-14 text-white focus:ring-2 outline-none  focus:ring-offset-2  dark:hover:bg-gray-100">
-                                <p className="text-xl font-medium leading-5 bg-green-400 py-3 px-5 text-white rounded-lg hover:shadow-lg transition duration-3000 cursor-pointer">See
-                                    More</p>
+                                <p className="text-xl font-medium leading-5 bg-green-400 py-3 px-5 text-white rounded-lg hover:shadow-lg transition duration-3000 cursor-pointer">
+                                    See More
+                                </p>
                                 <svg className="dark:text-gray-900" width="32" height="32" viewBox="0 0 32 32"
                                      fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M6.66663 16H25.3333"
-                                          stroke="currentColor"
-                                          strokeWidth="1.5"
-                                          strokeLinecap="round"
-                                          strokeLinejoin="round"/>
-                                    <path d="M20 21.3333L25.3333 16" stroke="currentColor" strokeWidth="1.5"
-                                          strokeLinecap="round" strokeLinejoin="round"/>
-                                    <path d="M20 10.6667L25.3333 16" stroke="currentColor" strokeWidth="1.5"
-                                          strokeLinecap="round" strokeLinejoin="round"/>
+                                    <FontAwesomeIcon icon={faArrowRight}/>
                                 </svg>
                             </button>
 
