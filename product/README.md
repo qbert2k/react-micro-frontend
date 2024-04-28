@@ -13,11 +13,27 @@ npx create-mf-app
 - Language: JavaScript
 - CSS: Tailwind
 
+```shell
+cd product
+npx create-mf-app
+npm install
+```
+
 ## Project Setup
 
+### Install Axios and React Router DOM
+
 ```shell
-npm install
 npm i axios react-router-dom
+```
+
+### Install FontAwesome
+
+```shell
+npm install @fortawesome/fontawesome-svg-core
+npm install @fortawesome/free-solid-svg-icons
+npm install @fortawesome/react-fontawesome
+npm install @fortawesome/free-brands-svg-icons
 ```
 
 ## Run Project
