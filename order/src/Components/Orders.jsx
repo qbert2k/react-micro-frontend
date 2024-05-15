@@ -10,11 +10,11 @@ export default () => {
 
     useEffect(() => {
         if (!orders.length) {
-            fetechorders()
+            fetchOrders()
         }
     }, [orders])
 
-    async function fetechorders() {
+    async function fetchOrders() {
         const {data} = await axios.get("https://fakestoreapi.com/products?limit=3")
         setOrders(data);
     }
