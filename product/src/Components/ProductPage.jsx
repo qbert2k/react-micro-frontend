@@ -27,7 +27,7 @@ export default ({loading,setLoading}) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
         <div className="flex flex-col md:flex-row -mx-4">
           <div className="md:flex-1 px-4">
-            <div x-data="{ image: 1 }" x-cloak>
+            <div x-data="{ image: 1 }" x-cloak="true">
               <div className="h-64 md:h-80 rounded-lg bg-gray-100 mb-4">
                 <div x-show="image === 1" className="h-64 md:h-80 rounded-lg bg-gray-100 mb-4 flex items-center justify-center">
                   <img src={product.image} alt="Product" className="h-72 w-full object-contain object-center" />
